@@ -47,15 +47,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         viewHolder.img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // inside on click listener we are creating a new intent
                 Intent i = new Intent(context, SecondActivity.class);
-
-                // on below line we are passing the image path to our new activity.
                 i.putExtra("imgPath", galleryList.get(position).getPath());
-
-                // at last we are starting our activity.
                 context.startActivity(i);
-                //TODO что-то может происходить, если кликнуть на изображение
                 Toast.makeText(context, "" + galleryList.get(position).getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
