@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.gallery);
         recyclerView.setHasFixedSize(true);
         // список в три колонки
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 3);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 3);
         recyclerView.setLayoutManager(layoutManager);
 
         //оптимизация
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
         ArrayList<Cell> cells = prepareDate();
-        MyAdapter adapter = new MyAdapter(getApplicationContext(), cells);
+        MyAdapter adapter = new MyAdapter(this, cells);
         recyclerView.setAdapter(adapter);
     }
 
